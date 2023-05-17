@@ -4,6 +4,7 @@ import{TfiFacebook, TfiGoogle , TfiLinkedin} from 'react-icons/tfi'
 import React from "react";
 import './NavBar.css';
 // import {BrowserRouter , Routes , Route , Link} from "react-router-dom";
+import {NavLink} from "react-router-dom"
 
 
 
@@ -23,7 +24,7 @@ const NavBar = () =>{
             </ul> 
             <ul className='rightFirstBar'>
                 <li style={{ borderRight : '2px solid black' }} ><a href='#a' style={{paddingRight : "10px"}}><BsTelephone/>&nbsp;&nbsp;(+212)5&nbsp;41&nbsp;34&nbsp;24&nbsp;56</a></li>
-                <li><a href='#a'><BsPerson/>&nbsp;&nbsp;Sign in Or Registre</a></li>
+                <li><NavLink to="/"><BsPerson/>&nbsp;&nbsp;Sign in Or Registre</NavLink></li>
             </ul>
         </div>
         <hr/>
@@ -33,13 +34,14 @@ const NavBar = () =>{
             </div>
             <div className='rightSecondBar'>
                 <ul >
-                    <li><a href='#a'>HOME</a></li>
-                    <li><a href='#a' >HOTEL</a></li>
-                    <li><a href='#a'>TOURS</a></li>
-                    <li><a href='#a'>CAR</a></li>
-                    <li><a href='#a'>EVENT</a></li>
-                    <li><a href='#a'>FLIGHT</a></li>
-                    <li><a href='#a'>BOAT</a></li>
+                    <li><NavLink to="/">HOME</NavLink></li>
+                    <li><NavLink to="/Hotel">HOTEL</NavLink></li>
+                    <li><NavLink to="/Tour">TOUR</NavLink></li>
+                    <li><NavLink to="/Car">CAR</NavLink></li>
+                    <li><NavLink to="/Event">EVENT</NavLink></li>
+                    <li><NavLink to="/Flight">FLIGHT</NavLink></li>
+                    <li><NavLink to="/Boat">BOAT</NavLink></li>
+
                 </ul>
             </div>
 

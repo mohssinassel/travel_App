@@ -6,11 +6,8 @@ import {NavLink} from "react-router-dom";
 const Destination = () =>{
     return(
     <div className='mainDestination'>
-        
         <p className='destinationTitle'>Top Destination</p>
-        
         <div className='Destination'>
-            
             <ul className='Destination1'>
                 <li>
                     <div><p>New York</p>

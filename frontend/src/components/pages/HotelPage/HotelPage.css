@@ -1,0 +1,76 @@
+
+
+.WholePage{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.leftSide{
+    /* background-color: aqua; */
+    flex: 0.22;
+    display: flex;
+    flex-direction: column;
+    
+}
+.rightSide{
+    /* background-color: beige; */
+    flex: 0.68;
+    
+    
+}
+
+.rightSide > div {
+    margin: 1rem;
+}
+.rightSide > div > h3{
+    margin-left: 2rem;
+    letter-spacing: 2px;
+}
+.searchPage{
+    border: 1px solid rgb(191, 190, 190);
+    margin: 4rem 1rem 1rem 1rem;
+    /* background-color: white; */
+    box-shadow: 5px 5px 10px rgb(193, 193, 193);
+}
+.searchPage > form{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    
+}
+.searchPage > form > input{
+    border: none;
+    border-bottom: 1px solid black;
+    background:none;
+    height: 5vh;
+    margin: 0 0 1rem 0;
+}
+.searchPage > form > label{
+    font-family: 'My second font';
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(88, 88, 88);
+}
+.searchPage > form > .submit{
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 1px;
+    
+}
+.mainResult{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    /* justify-content: center; */
+}
+
+.mainResult > div{
+    /* flex: 0.5; */
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    /* border: 1px solid black; */
+    box-shadow: 5px 5px 10px rgb(193, 193, 193);
+}

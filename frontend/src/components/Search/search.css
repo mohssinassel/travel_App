@@ -1,6 +1,6 @@
 @import url("../../App.css");
 @import url("../../fonts/fonts.css");
-form{
+.homeSearch{
     text-align: center;
     border-top: 3px solid black;
 }

@@ -15,71 +15,39 @@ import { useState } from 'react';
 import Tour from './components/Search/Tour/Tour';
 import  Event from './components/Search/Event/Event';
 import Flight from './components/Search/Flight/Flight';
-import { Route } from 'react-router-dom';
+import { Routes , Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
-
+import Home from './components/pages/Home/Home';
+import HotelPage from './components/pages/HotelPage/HotelPage';
+import TourPage from './components/pages/TourPage/TourPage';
+import CarPage from './components/pages/CarPage/CarPage';
+import BoatPage from './components/pages/BoatPage/BoatPage';
+import FlightPage from './components/pages/FlightPage/FlightPage';
+import EventPage from './components/pages/EventPage/EventPage';
 
 
 
 
 
 function App() {
-  const [search, setSearch] = useState("Hotel");
-
-  function searchChoice(search){
-    
-      if (search === 'Hotel') {
-        return <Hotel/>;
-      } else if (search === 'Car') {
-        return <Car />;
-      } else if (search === 'Tour') {
-        return <Tour />;
-      }else if (search === 'Event'){
-        return <Event/>
-      }else if(search === 'Flight'){
-        return <Flight/>
-      }else if(search === 'Boat'){
-        return<Boat/>
-      }
-
-      
-    }
+  
 
   return (
 
     <div className="App">
       <div className='AppHome'>
-        <NavBar/>
-        <div className='Main'>
-        <div className='frontMain'>
-          <p>Let's The World Together!</p>
-          <div className='searchMain'>
-            <div className='navChoice'>
-              <button className={search==="Hotel"?"choiceSelected":"choice"} onClick={()=>setSearch("Hotel")}><FaHotel/>&nbsp;Hotel</button>
-              <button className={search==="Tour"?"choiceSelected":"choice"} onClick={()=>setSearch("Tour")}><MdTour/>&nbsp;Tour</button>
-              <button className={search==="Car"?"choiceSelected":"choice"} onClick={()=>setSearch("Car")}><FaCar/>&nbsp;Car</button>
-              <button className={search==="Event"?"choiceSelected":"choice"} onClick={()=>setSearch("Event")}><MdEvent/>&nbsp;Event</button>
-              <button className={search==="Flight"?"choiceSelected":"choice"} onClick={()=>setSearch("Flight")}><MdFlight/>&nbsp;Flight</button>
-              <button className={search==="Boat"?"choiceSelected":"choice"} onClick={()=>setSearch("Boat")}><MdDirectionsBoat/>&nbsp;Boat</button>
-            </div>
-            {searchChoice(search)}
-          </div>
-        </div>
-        <div className='frontPicture'>
-        <img src={FirstImage} alt='image1'/>
-        <img src={SecondImage} alt='image2'/>
-        </div>
-        </div>
+      <NavBar/>
+      <Routes>
+        <Route path='/' Component={Home}></Route>
+        <Route path='/Hotel' Component={HotelPage} ></Route>
+        <Route path='/Tour' Component={TourPage}></Route>
+        <Route path='/Car' Component={CarPage}></Route>
+        <Route path='/Flight' Component={FlightPage}></Route>
+        <Route path='/Boat' Component={BoatPage}></Route>
+        <Route path='/Event' Component={EventPage}></Route>
+      </Routes>
       </div>
-      <hr/>
-      <Router>
-      <Destination/>
-      <br/><br/>
-      <hr/>
-      <Trending/>
-      <br/><br/>
       <Footer/>
-      </Router>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import '../search.css';
 
 const Hotel = () => {
     return(
-        <form >
+        <form className="homeSearch">
             <input type="text" className="where" ></input>
             <input type="date" className="date"></input>
             {/* <input type="text" className="number"></input> */}
