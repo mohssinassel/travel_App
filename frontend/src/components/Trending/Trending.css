@@ -1,0 +1,36 @@
+.trending{
+    padding: 0;
+    margin: 0;
+    /* height: 100vh; */
+    width: 100%;
+}
+.trending >p{
+    font-family: 'My Costom Font';
+    font-size: 2.3rem;
+    text-align: center;
+    font-weight: 700;
+    /* border-bottom: 2px solid var(--main-color); */
+    margin-bottom: 3rem;
+    letter-spacing: 0.12rem;
+}
+.trending >ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1.5rem;
+    /* align-items:normal; */
+}
+.trendingChoice , .trendingChoiceActive{
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+}
+.trendingChoiceActive{
+    
+    background-color: var(--main-color);
+    border-radius: 10px;
+    
+    color: white;
+}

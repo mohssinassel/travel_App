@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'My Custom Font';
+    
+    src: url('./LibreFranklin-Regular.ttf') format('truetype');
+    
+}
+@font-face {
+    font-family: 'My Second Font';
+    
+    src: url('./Tajawal-Regular.ttf') format('truetype');
+    
+}

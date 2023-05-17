@@ -1,0 +1,23 @@
+@import url("../../App.css");
+@import url("../../fonts/fonts.css");
+form{
+    text-align: center;
+    border-top: 3px solid black;
+}
+.where , .submit , .number , .date{
+    width: 90%;
+}
+
+.submit{
+    background-color: white;
+    color: black;
+    font-family: 'My Custom Font';
+    font-size: 1.2rem;
+}
+.where , .submit , .number , .date{
+    min-height: 50px;
+    border: 3px solid black;
+    border-radius: 15px;
+    background-color: white;
+    margin-top: 1.2rem;
+}

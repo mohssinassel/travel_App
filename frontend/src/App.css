@@ -1,0 +1,111 @@
+@import url("./fonts/fonts.css");
+.App{
+  margin: 0;
+  padding: 0;
+  background-color: var(--form-color);
+}
+.AppHome{
+  
+  /* background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.5)),url('./images/background_Home.jpg'); */
+  /* background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  background-color: var(--form-color);
+  
+  width: 100%;
+  height: 100vh;
+}
+
+:root{
+  --main-color:rgb(81, 145, 250) ;
+  --form-color:rgb(236, 236, 236);
+}
+.frontMain{
+  /* background-color: white; */
+  width: 50%;
+  min-height: 70vh;
+  margin-left: 10rem;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+}
+.frontMain > p{
+  font-family: 'My Second Font';
+  font-size: 3rem;
+  margin-left: 8rem;
+  /* color: white; */
+  /* background-color: aquamarine; */
+}
+.searchMain{
+  /* background-color: rgb(41, 236, 236); */
+  width: 100%;
+  min-height: 55vh;
+  border-radius: 15px;
+  border: 3px black solid;
+  background-color: var(--main-color);
+  box-shadow: 5px 10px 30px rgb(0, 0, 0,0.2);
+  /* justify-content: center; */
+}
+.navChoice{
+  /* background-color: bisque; */
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 2.5rem;
+  margin-top: 1.1rem;
+  margin-bottom: 1rem;
+}
+.choice , .choiceSelected{
+  /* background: none; */
+  /* border: none; */
+  /* margin-right:10px ; */
+  color: white;
+  cursor: pointer;
+  font-family: "My Custom Font";
+  font-size: 1.3rem;
+  font-weight: 500;
+  
+  display: flex; 
+  padding: 0.25rem 0.5rem;
+  border: 2px solid transparent;
+}
+.choice{
+  background: none;
+  
+}
+.choiceSelected{
+  background-color: white;
+  border: 2px solid black;
+  /* padding-bottom: 15px; */
+  /* padding: 5px 8px; */
+  border-radius:15px ;
+  color: black;
+
+}
+.Main{
+  display: flex;
+
+}
+.frontPicture{
+  /* background-color: aquamarine; */
+  width: 35%;
+
+  margin-left: 2rem;
+}
+.frontPicture > img:nth-child(1){
+  width: 60%;
+  position: relative;
+  left: 3rem;
+  top:1rem ; 
+}
+.frontPicture > img:nth-child(2){
+  width: 13%;
+  position: absolute;
+  left: 75rem;
+  top: 27rem;
+}
+.frontPicture > img{
+  border: 5px solid white;
+  border-radius: 25px;
+  box-shadow: 5px 5px 30px rgb(0, 0, 0,0.1);
+}

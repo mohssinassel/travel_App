@@ -1,0 +1,114 @@
+
+.mainDestination{
+    width: 100%;
+    min-height: 97vh;
+    margin: 0;
+    padding: 0;
+}
+.destinationTitle{
+    font-family: 'My Costom Font';
+    font-size: 2.3rem;
+    text-align: center;
+    font-weight: 700;
+    /* border-bottom: 2px solid var(--main-color); */
+    margin-bottom: 3rem;
+    letter-spacing: 0.12rem;
+    /* box-sizing: border-box; */
+    /* width: fit-content; */
+
+    
+}
+
+
+
+
+.Destination >ul {
+    list-style: none;
+}
+
+
+.Destination1 {
+    display: flex;
+    height: 45vh;
+    justify-content: space-around;
+}
+
+.Destination2{
+    display: flex;
+    height: 35vh;
+    justify-content: space-around;
+}
+
+.Destination1 >li{
+    /* border: 1px solid transparent; */
+    /* border-radius: 10px; */
+    flex: 0.45;
+    text-align: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0) 90%),url("../../images/beautiful-manhattan-bridge-new-york-usa.jpg");
+}
+.Destination1 :nth-child(2){
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0) 90%),url("../../images/delay-video-jinxianmen-bridge-jieyang-city-guangdong-province-china.jpg");
+}
+
+.Destination2 > li{
+    /* border-radius: 10px; */
+    flex: 0.2;
+    text-align: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0) 90%),url("../../images/view-lyon-with-saone-river-morning.jpg");
+}
+
+.Destination2 :nth-child(2){
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0) 90%),url("../../images/delay-video-jinxianmen-bridge-jieyang-city-guangdong-province-china.jpg");
+}
+    /* .Destination2 :nth-child(2):hover{
+        background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0) 90%),url("../../images/delay-video-jinxianmen-bridge-jieyang-city-guangdong-province-china.jpg");
+    } */
+.Destination2 :nth-child(3){
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0) 90%),url("../../images/wooden-bridge-koh-nangyuan-island-surat-thani-thailand.jpg");
+}
+.Destination2 :nth-child(4){
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0) 90%),url("../../images/beautiful-manhattan-bridge-new-york-usa.jpg");
+}
+
+.Destination > ul > li > div > p{
+    font-size: 1.5rem;
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.7rem;
+    margin-top: 0.7rem;
+}
+.Destination >ul  > li :nth-child(2){
+    background-image: none;
+}
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    display: block;
+    
+}
+.second-ul{
+    list-style: none;
+    display: flex;
+    
+    justify-content: space-around;
+    align-items: center;
+    visibility: hidden;
+}
+.Destination ul li:hover .second-ul{
+    
+    color: black;
+    visibility: visible;
+}
+
+
+.nav-link:hover{
+    color: var(--main-color);
+    
+}
+
+
+
+
