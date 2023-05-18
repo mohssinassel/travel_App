@@ -40,6 +40,7 @@ const Destination = () =>{
                     <ul className='second-ul'>
                         <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
                         <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
+                        {/* <li><NavLink className='nav-link'>2 Hotels</NavLink></li>    */}
                     </ul>
                 </li>
                 <li>

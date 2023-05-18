@@ -13,9 +13,11 @@
     color: black;
     font-family: 'My Custom Font';
     font-size: 1.2rem;
+    margin-bottom: 3rem;
 }
 .where , .submit , .number , .date{
-    min-height: 50px;
+    height: 7vh;
+    min-height: 30px;
     border: 3px solid black;
     border-radius: 15px;
     background-color: white;

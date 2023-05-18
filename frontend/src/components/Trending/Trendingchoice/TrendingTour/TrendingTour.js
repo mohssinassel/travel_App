@@ -5,7 +5,6 @@ import {TiLocation} from 'react-icons/ti'
 const TrendingTour =() => {
     return(
         <div className="mainTrending">
-                    <div className="trendLine">
                         <div>
                             <div className="imageTrend">
                                 <p><BsHeart/></p>
@@ -80,8 +79,7 @@ const TrendingTour =() => {
                         </div>
                         
                         
-                    </div>
-                    <div className="trendLine">
+                    
                     <div>
                             <div className="imageTrend">
                                 <p><BsHeart/></p>
@@ -151,7 +149,7 @@ const TrendingTour =() => {
                                 <div>From <span>200$</span>/ Night</div>
                             </div>
                         </div>
-                    </div>
+                    
                 
                 
             

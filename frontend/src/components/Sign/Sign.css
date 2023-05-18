@@ -1,0 +1,88 @@
+.signIn , .signUp{
+    position: fixed ;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%,-50%);
+    background-color: white;
+    padding: 20px ;
+    z-index: 1000;
+    min-width: 400px;
+    width: 30%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.signUp{
+    height: 50vh;
+}
+.signIn{
+    height: 40vh;
+}
+.mainsignIn{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+.signInForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signIn > button{
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+}
+.signInForm > input{
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 6vh;
+    border: 1px solid rgb(216, 216, 216);
+}
+.signInForm > input:focus{
+    
+}
+.signIn > div , .signUp > div{
+    display: flex;
+    justify-content: space-between;
+}
+.signIn > div > p , .signUp > div > p{
+    font-size: 1.4rem;
+    font-family: 'My second font';
+    font-weight: 600;
+    margin-top: 0;
+}
+.exitForm{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.signInForm > div > span {
+    color: var(--main-color);
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+.submitSign{
+    background-color: var(--main-color);
+    color: white;
+    width: 100%;
+    font-size: 1.3rem;
+    font-family: 'My second font';
+}
+.nameForm{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 6vh;
+    margin-bottom: 2rem;
+}
+.nameForm > input{
+    flex: 0.45;
+    border: 1px solid rgb(216, 216, 216);
+}

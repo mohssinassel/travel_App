@@ -51,9 +51,11 @@ return (
     <div className='AppHome'>
         <div className='Main'>
             <div className='frontMain'>
-                <p>Let's The World Together!</p>
+                <div className='mainTitle'>
+                Let's The World Together!
+                </div>
                 <div className='searchMain'>
-                    <div className='navChoice'>
+                    <div className='navChoice'> 
                         <button className={search==="Hotel"?"choiceSelected":"choice"} onClick={()=>setSearch("Hotel")}><FaHotel/>&nbsp;Hotel</button>
                         <button className={search==="Tour"?"choiceSelected":"choice"} onClick={()=>setSearch("Tour")}><MdTour/>&nbsp;Tour</button>
                         <button className={search==="Car"?"choiceSelected":"choice"} onClick={()=>setSearch("Car")}><FaCar/>&nbsp;Car</button>
@@ -61,7 +63,7 @@ return (
                         <button className={search==="Flight"?"choiceSelected":"choice"} onClick={()=>setSearch("Flight")}><MdFlight/>&nbsp;Flight</button>
                         <button className={search==="Boat"?"choiceSelected":"choice"} onClick={()=>setSearch("Boat")}><MdDirectionsBoat/>&nbsp;Boat</button>
                     </div>
-            {searchChoice(search)}
+            {   searchChoice(search)}
                 </div>
             </div>
             <div className='frontPicture'>

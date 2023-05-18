@@ -23,18 +23,27 @@
 .frontMain{
   /* background-color: white; */
   width: 50%;
-  min-height: 70vh;
-  margin-left: 10rem;
-  /* display: flex; */
+  min-width: 35rem;
+  min-height: 75vh;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
   /* justify-content: center;
   align-items: center; */
 }
-.frontMain > p{
+.mainTitle{
   font-family: 'My Second Font';
-  font-size: 3rem;
-  margin-left: 8rem;
+  font-size: 2.1rem;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 8rem; */
   /* color: white; */
   /* background-color: aquamarine; */
+  /* text-align: center; */
+  /* font-size: 100%; */
+
 }
 .searchMain{
   /* background-color: rgb(41, 236, 236); */
@@ -49,9 +58,9 @@
 .navChoice{
   /* background-color: bisque; */
   display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin-left: 2.5rem;
+  justify-content: space-around;
+  width: 100%;
+  /* margin-left: 5%; */
   margin-top: 1.1rem;
   margin-bottom: 1rem;
 }

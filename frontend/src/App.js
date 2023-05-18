@@ -24,19 +24,13 @@ import CarPage from './components/pages/CarPage/CarPage';
 import BoatPage from './components/pages/BoatPage/BoatPage';
 import FlightPage from './components/pages/FlightPage/FlightPage';
 import EventPage from './components/pages/EventPage/EventPage';
-
-
-
-
-
+import Test from './Test';
+// import signIn from './components/signIn/signIn';
 function App() {
-  
-
   return (
-
     <div className="App">
       <div className='AppHome'>
-      <NavBar/>
+      <NavBar/>  
       <Routes>
         <Route path='/' Component={Home}></Route>
         <Route path='/Hotel' Component={HotelPage} ></Route>
@@ -47,6 +41,8 @@ function App() {
         <Route path='/Event' Component={EventPage}></Route>
       </Routes>
       </div>
+      {/* <Test/>  */}
+      {/* <signIn/> */}
       <Footer/>
     </div>
   );

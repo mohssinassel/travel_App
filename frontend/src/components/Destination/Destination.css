@@ -34,9 +34,12 @@
 }
 
 .Destination2{
-    display: flex;
-    height: 35vh;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 0 0rem 0 2.5rem;
+    height: 40vh;
+    
 }
 
 .Destination1 >li{
@@ -53,7 +56,8 @@
 
 .Destination2 > li{
     /* border-radius: 10px; */
-    flex: 0.2;
+    /* flex: 0.2; */
+    margin: 0 2.2rem;
     text-align: center;
     background-size: cover;
     background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0) 90%),url("../../images/view-lyon-with-saone-river-morning.jpg");
@@ -82,6 +86,7 @@
 .Destination >ul  > li :nth-child(2){
     background-image: none;
 }
+
 .nav-link {
     text-decoration: none;
     color: white;
@@ -96,7 +101,9 @@
     justify-content: space-around;
     align-items: center;
     visibility: hidden;
+    /* background-color: aqua; */
 }
+
 .Destination ul li:hover .second-ul{
     
     color: black;

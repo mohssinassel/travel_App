@@ -2,10 +2,12 @@ import { NavLink } from "react-router-dom";
 import './TrendingHotel.css'
 import {BsHeart , BsFillStarFill} from "react-icons/bs"
 import {TiLocation} from 'react-icons/ti'
+import { useState } from "react";
 
 
 
 const TrendingHotel = () => {
+    const [islike , useIslike] = useState(false);
     return(
         <div className="mainTrending">
                     

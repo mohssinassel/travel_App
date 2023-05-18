@@ -71,6 +71,13 @@
     /* flex: 0.5; */
     margin-left: 2rem;
     margin-bottom: 2rem;
+    min-height: 55vh;
     /* border: 1px solid black; */
     box-shadow: 5px 5px 10px rgb(193, 193, 193);
+    cursor: pointer;
+}
+.mainResult > div:hover{
+    box-shadow: 3px 3px 15px rgb(0, 0, 0,0.7);
+    /* border: 1px solid black; */
+
 }
