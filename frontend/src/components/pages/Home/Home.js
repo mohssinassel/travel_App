@@ -63,7 +63,7 @@ return (
                         <button className={search==="Flight"?"choiceSelected":"choice"} onClick={()=>setSearch("Flight")}><MdFlight/>&nbsp;Flight</button>
                         <button className={search==="Boat"?"choiceSelected":"choice"} onClick={()=>setSearch("Boat")}><MdDirectionsBoat/>&nbsp;Boat</button>
                     </div>
-            {   searchChoice(search)}
+                    {searchChoice(search)}
                 </div>
             </div>
             <div className='frontPicture'>

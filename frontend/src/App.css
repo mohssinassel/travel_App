@@ -21,10 +21,11 @@
   --form-color:rgb(236, 236, 236);
 }
 .frontMain{
-  /* background-color: white; */
+  /* background-color: white;  */
   width: 50%;
   min-width: 35rem;
-  min-height: 75vh;
+  height: 75vh;
+  min-height: 300px;
   margin-left: 5%;
   display: flex;
   flex-direction: column;
@@ -48,7 +49,8 @@
 .searchMain{
   /* background-color: rgb(41, 236, 236); */
   width: 100%;
-  min-height: 55vh;
+  min-height: 300px;
+  height: 100vh;
   border-radius: 15px;
   border: 3px black solid;
   background-color: var(--main-color);

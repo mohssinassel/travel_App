@@ -1,32 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Test = () => {
-    const [userData, setUserData] = useState([]);
+    const [hotelImages, setHotelImages] = useState([]);
 
-    const fun = async () => {
-        const response = await axios.get('http://localhost:80/Travel/api/index.php')
-    
-        if(response.data){
-            setUserData(response.data);}
-            else{
-                console.log(response.error);
-            }
-    }
-    useEffect( () =>{fun()},[])
+    useEffect(() => {
+        const fetchHotelImages = async () => {
+        try {
+            const response = await axios.get('https://api.pexels.com/v1/search', {
+            headers: {
+                Authorization: 'YOUR_PEXELS_API_KEY',
+            },
+            params: {
+                query: 'hotel',
+                per_page: 12,
+            },
+            });
+            setHotelImages(response.data.photos);
+        } catch (error) {
+            console.error('Error fetching hotel images:', error);
+        }
+        };
+
+        fetchHotelImages();
+    }, []);
+
     return (
         <div>
-        <h1>User Data</h1>
-        <ul>
-            {userData.map(user => (
-            <li key={user.id}>
-                <p>ID: {user.id}</p>
-                {/* <p>Name: {user.name}</p> */}
-                <p>Email: {user.email}</p>
-            </li>
-            ))}
-    
-        </ul>
+        {hotelImages.map((image) => (
+            <img key={image.id} src={image.src.medium} alt={image.photographer} />
+        ))}
         </div>
     );
     };

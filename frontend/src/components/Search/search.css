@@ -1,8 +1,12 @@
 @import url("../../App.css");
 @import url("../../fonts/fonts.css");
+
 .homeSearch{
     text-align: center;
     border-top: 3px solid black;
+    position: relative;
+    height: 50vh;
+    min-height: 20px;
 }
 .where , .submit , .number , .date{
     width: 90%;
@@ -17,9 +21,9 @@
 }
 .where , .submit , .number , .date{
     height: 7vh;
-    min-height: 30px;
+    /* min-height: 30px; */
     border: 3px solid black;
     border-radius: 15px;
     background-color: white;
-    margin-top: 1.2rem;
+    margin-top: 3vh;
 }

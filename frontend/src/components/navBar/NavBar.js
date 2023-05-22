@@ -1,19 +1,42 @@
 
 import {BsTelephone, BsPerson} from 'react-icons/bs';
 import{TfiFacebook, TfiGoogle , TfiLinkedin} from 'react-icons/tfi'
+import {BiLogOut} from 'react-icons/bi'
 import React from "react";
 import './NavBar.css';
 // import {BrowserRouter , Routes , Route , Link} from "react-router-dom";
 import {NavLink} from "react-router-dom"
-import {useState} from 'react'
+import {useState , useEffect} from 'react'
 import SignIn from '../Sign/SignIn';
 import SignUp from '../Sign/SignUp';
 import {FaSignInAlt} from 'react-icons/fa';
 
 
+
 const NavBar = () =>{
     const [isopen , setIsopen] = useState(false);
     const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+    const [currentUser,setCurrentUser] = useState(undefined);
+
+    useEffect(() => {
+        if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+            setCurrentUser(
+                JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY))
+            );
+            console.log(JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)))
+
+            }
+        
+        }, []); 
+    function logOut(){
+        localStorage.clear();
+        setCurrentUser(undefined);
+    }
+    function handleFormClose() {
+        setIsopen(false);
+        setIsSignUpOpen(false);
+        // window.location.reload();
+    }
 
     return(
     <div className="nav">
@@ -27,13 +50,20 @@ const NavBar = () =>{
             </ul> 
             <ul className='rightFirstBar'>
                 <li style={{ borderRight : '2px solid black' }} ><a href='#a' style={{paddingRight : "10px"}}><BsTelephone/>&nbsp;&nbsp;(+212)5&nbsp;41&nbsp;34&nbsp;24&nbsp;56</a></li>
+                {currentUser === undefined ? (
+                <>
                 <li><NavLink onClick={() =>setIsopen(true)}><FaSignInAlt/>&nbsp;&nbsp;Sign in </NavLink></li>
-                <li><NavLink onClick={() =>setIsSignUpOpen(true)}><BsPerson/>&nbsp;&nbsp;Registre </NavLink></li>
+                <li><NavLink onClick={() =>setIsSignUpOpen(true)}><BsPerson/>&nbsp;&nbsp;Registre </NavLink></li></>) : (
+                    <>
+                    <li><NavLink ><BsPerson/>&nbsp;&nbsp;{currentUser} </NavLink></li>
+                    <li><NavLink onClick={()=>logOut()}><BiLogOut/>&nbsp;&nbsp;logOut </NavLink></li>
+                    </> 
+                )}
             </ul>
             
         </div>
-        <SignIn open={isopen} onClose={() => setIsopen(false)}/>
-        <SignUp open={isSignUpOpen} onClose={() => setIsSignUpOpen(false)}/>
+        <SignIn open={isopen} onClose={handleFormClose}/>
+        <SignUp open={isSignUpOpen} onClose={handleFormClose}/>
         <hr/>
         <div className="navBarSecond">
             <div className='Logo'>

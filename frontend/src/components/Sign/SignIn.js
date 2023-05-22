@@ -4,8 +4,39 @@ import ReactDom from "react-dom";
 import { FaTimes } from "react-icons/fa";
 import { useState } from "react";
 import SignUp from "./SignUp";
+import axios from "axios";
 
 export default function SignIn({ open, onClose }) {
+    const [userInfo,setUserInfo] = useState({
+        username : '',
+        password: ''
+    })
+    const handleInputChange = (event) => {
+        setUserInfo({
+            ...userInfo,
+            [event.target.name]: event.target.value
+            });
+        };
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            // JSON.stringify(userInfo);
+        
+            axios.post('http://localhost:80/Travel/api/signIn.php', userInfo)
+                .then(response => {
+                    localStorage.setItem(
+                        process.env.REACT_APP_LOCALHOST_KEY,
+                        JSON.stringify(response.data.user.username)
+                    );
+                    console.log(response.data.user.username);
+                })
+                .catch(error => {
+                    // Handle any errors
+                    console.log(error.error);
+                });
+                // window.location.reload();
+                onClose();
+
+            };
     
 
     useEffect(() => {
@@ -32,10 +63,10 @@ export default function SignIn({ open, onClose }) {
             <p>Sign In</p>
             <FaTimes onClick={onClose} className="exitForm" />
             </div>
-            <form className="signInForm">
-            <input type="email" />
-            <input type="password" />
-            <input type="submit" className="submitSign" />
+            <form className="signInForm" onSubmit={handleSubmit}>
+                <input type="text" name="username" value={userInfo.username}onChange={handleInputChange}/>
+                <input type="password" name="password" value={userInfo.password} onChange={handleInputChange}/>
+                <input type="submit" className="submitSign" defaultValue="submit"/>
             </form>
         </div>
         

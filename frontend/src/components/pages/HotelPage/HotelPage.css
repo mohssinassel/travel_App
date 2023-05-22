@@ -71,13 +71,18 @@
     /* flex: 0.5; */
     margin-left: 2rem;
     margin-bottom: 2rem;
-    min-height: 55vh;
+    min-height: 400px;
+    min-width: 310px;
     /* border: 1px solid black; */
-    box-shadow: 5px 5px 10px rgb(193, 193, 193);
+    /* box-shadow: 5px 5px 10px rgb(193, 193, 193);
+     */
+    border: 2px solid rgb(206, 206, 206);
+    border-radius: 3px;
     cursor: pointer;
 }
 .mainResult > div:hover{
     box-shadow: 3px 3px 15px rgb(0, 0, 0,0.7);
     /* border: 1px solid black; */
+    border: 2px solid rgb(133, 133, 133);
 
 }
