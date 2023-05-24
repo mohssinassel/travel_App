@@ -1,19 +1,20 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import './TrendingHotel.css'
-import {BsHeart , BsFillStarFill} from "react-icons/bs"
+import { BsFillStarFill} from "react-icons/bs";
+import {AiFillHeart} from 'react-icons/ai';
 import {TiLocation} from 'react-icons/ti'
-import { useState } from "react";
+// import { useState } from "react";
 
 
 
 const TrendingHotel = () => {
-    const [islike , useIslike] = useState(false);
+    // const [islike , useIslike] = useState(false);
     return(
         <div className="mainTrending">
                     
                         <div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -31,7 +32,7 @@ const TrendingHotel = () => {
                         </div>
                         <div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -49,7 +50,7 @@ const TrendingHotel = () => {
                         </div>
                         <div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -67,7 +68,7 @@ const TrendingHotel = () => {
                         </div>
                         <div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -85,7 +86,7 @@ const TrendingHotel = () => {
                         </div>
                     <div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -102,7 +103,7 @@ const TrendingHotel = () => {
                             </div>
                         </div><div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -119,7 +120,7 @@ const TrendingHotel = () => {
                             </div>
                         </div><div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -136,7 +137,7 @@ const TrendingHotel = () => {
                             </div>
                         </div><div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>

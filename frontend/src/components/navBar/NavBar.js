@@ -38,6 +38,10 @@ const NavBar = () =>{
         // window.location.reload();
     }
 
+    function change_header(user){
+        setCurrentUser(user.username)
+    }
+
     return(
     <div className="nav">
         <div className="navBarFirst">
@@ -62,8 +66,8 @@ const NavBar = () =>{
             </ul>
             
         </div>
-        <SignIn open={isopen} onClose={handleFormClose}/>
-        <SignUp open={isSignUpOpen} onClose={handleFormClose}/>
+        <SignIn open={isopen} onClose={handleFormClose} changeHeader={change_header}/>
+        <SignUp open={isSignUpOpen} onClose={handleFormClose} changeHeader={change_header}/>
         <hr/>
         <div className="navBarSecond">
             <div className='Logo'>

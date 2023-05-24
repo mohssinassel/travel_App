@@ -1,0 +1,6 @@
+.tourInfo {
+    display: flex;
+    justify-content: space-around;
+    color: rgb(89, 89, 89);
+    font-weight: 700;
+}

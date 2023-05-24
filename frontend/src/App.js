@@ -11,6 +11,7 @@ import CarPage from './components/pages/CarPage/CarPage';
 import BoatPage from './components/pages/BoatPage/BoatPage';
 import FlightPage from './components/pages/FlightPage/FlightPage';
 import EventPage from './components/pages/EventPage/EventPage';
+import Detail from './components/detail/Detail';
 import Test from './Test';
 // import signIn from './components/signIn/signIn';
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/Flight' Component={FlightPage}></Route>
         <Route path='/Boat' Component={BoatPage}></Route>
         <Route path='/Event' Component={EventPage}></Route>
+        <Route path="/:choix/:id" Component={Detail}></Route>
       </Routes>
       </div>
       {/* <Test/>  */}

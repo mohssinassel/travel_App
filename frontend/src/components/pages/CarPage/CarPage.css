@@ -1,0 +1,8 @@
+.carInfo{
+    display: flex;
+    justify-content: space-around;    
+}
+.carInfo > div >span {
+    font-weight: 700;
+    margin-right: 0.3rem;
+}

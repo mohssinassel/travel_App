@@ -1,5 +1,6 @@
 import '../TrendingHotel/TrendingHotel.css'
-import {BsHeart , BsFillStarFill} from "react-icons/bs"
+import { BsFillStarFill} from "react-icons/bs";
+import { AiFillHeart } from 'react-icons/ai';
 import {TiLocation} from 'react-icons/ti'
 
 const TrendingTour =() => {
@@ -7,7 +8,7 @@ const TrendingTour =() => {
         <div className="mainTrending">
                         <div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -25,7 +26,7 @@ const TrendingTour =() => {
                         </div>
                         <div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -43,7 +44,7 @@ const TrendingTour =() => {
                         </div>
                         <div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -61,7 +62,7 @@ const TrendingTour =() => {
                         </div>
                         <div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -82,7 +83,7 @@ const TrendingTour =() => {
                     
                     <div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -99,7 +100,7 @@ const TrendingTour =() => {
                             </div>
                         </div><div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -116,7 +117,7 @@ const TrendingTour =() => {
                             </div>
                         </div><div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>
@@ -133,7 +134,7 @@ const TrendingTour =() => {
                             </div>
                         </div><div>
                             <div className="imageTrend">
-                                <p><BsHeart/></p>
+                                <p><AiFillHeart/></p>
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
                                 <p>casablanca</p>

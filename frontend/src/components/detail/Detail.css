@@ -1,0 +1,53 @@
+.backDetail{
+    width: 100%;
+    height: 70vh;
+    /* background-color: aqua; */
+    background-size:cover ;
+    background-position:  center center;
+}   
+.containerDetail{
+    display: flex;
+    justify-content: center;
+}
+
+.mainDetail{
+    width: 80%;
+    /* background-color: aqua; */
+    margin-top: 5rem;
+    /* padding: 2rem; */
+    font-family: 'My second font';
+}
+.firstDetail{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.secondDetail{
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 1rem 0;
+    /* color: rgb(129, 129, 129); */
+}
+.secondDetail > div{
+    margin-right: 0.5rem;
+}
+.thirdDetail{
+    margin: 1rem 0;
+}
+.thirdDetail > div{
+    margin: 1rem 0;
+}
+.descDetail{
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.book{
+    border: 2px solid black;
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}

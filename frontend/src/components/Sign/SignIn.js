@@ -6,7 +6,7 @@ import { useState } from "react";
 import SignUp from "./SignUp";
 import axios from "axios";
 
-export default function SignIn({ open, onClose }) {
+export default function SignIn({ open, onClose, changeHeader }) {
     const [userInfo,setUserInfo] = useState({
         username : '',
         password: ''
@@ -28,14 +28,16 @@ export default function SignIn({ open, onClose }) {
                         JSON.stringify(response.data.user.username)
                     );
                     console.log(response.data.user.username);
+                    changeHeader(response.data.user);
                 })
                 .catch(error => {
                     // Handle any errors
                     console.log(error.error);
                 });
                 // window.location.reload();
+                // window.location.replace(window.location.href);
                 onClose();
-
+                
             };
     
 

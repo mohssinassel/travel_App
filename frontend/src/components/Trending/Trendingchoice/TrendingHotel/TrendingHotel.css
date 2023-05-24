@@ -44,7 +44,12 @@
 .imageTrend > p:hover{
     color: red;
     /* background-color: red    ; */
-
+}
+.fav{
+    color: red;
+}
+.notfav{
+    color: white;
 }
 .locationTrend{
     margin:0;

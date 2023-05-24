@@ -86,3 +86,16 @@
     border: 2px solid rgb(133, 133, 133);
 
 }
+
+.featured , .featuredNone{
+    /* border: 1px solid var(--main-color); */
+    border-radius: 25px;
+    padding: 0 1rem;
+    background-color: white;
+    color: var(--main-color);
+    letter-spacing: 0;
+    font-weight: 600;
+}
+.featuredNone{
+    display: none;
+}

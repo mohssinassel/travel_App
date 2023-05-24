@@ -1,0 +1,9 @@
+.boatInfo{
+    display: flex;
+    justify-content: space-around;
+}
+
+.boatInfo > div > span {
+    font-weight: 700;
+    margin-right: 0.3rem;
+}
