@@ -6,7 +6,7 @@ import {FaTimes} from 'react-icons/fa';
 import { useState } from "react";
 import axios from "axios";
 
-export default function SignUp({ open, onClose }) {
+export default function SignUp({ open, onClose ,changeHeader}) {
     const [formData, setFormData] = useState({
         first_name: '',
         last_name: '',
@@ -32,6 +32,7 @@ export default function SignUp({ open, onClose }) {
                             JSON.stringify(response.data.user.username)
                         );
                         console.log(response.data.user.username);
+                        changeHeader(response.data.user);
                     })
                     .catch(error => {
                         // Handle any errors
@@ -73,13 +74,13 @@ export default function SignUp({ open, onClose }) {
             </div>
             <form className="signInForm" onSubmit={handleSubmit}>
                 <div className="nameForm">
-                <input type="text" name="first_name"   value={formData.first_name} onChange={handleInputChange}/>
-                <input type="text" name="last_name"    value={formData.last_name} onChange={handleInputChange}/>
+                <input type="text" name="first_name"  placeholder="First Name" value={formData.first_name} onChange={handleInputChange}/>
+                <input type="text" name="last_name"  placeholder="Last Name"  value={formData.last_name} onChange={handleInputChange}/>
                     
                 </div>
-                <input type="text" name="username" value={formData.username} onChange={handleInputChange}/>
-                <input type="email" name="email" value={formData.email} onChange={handleInputChange}/>
-                <input type="password" name="password"  value={formData.password} onChange={handleInputChange}/>
+                <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleInputChange}/>
+                <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleInputChange}/>
+                <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleInputChange}/>
                 <button type="submit"  className="submitSign" defaultValue="Submit">Sign Up</button>
             </form>
         </div>

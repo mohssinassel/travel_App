@@ -4,7 +4,7 @@ import { BsLinkedin ,BsFacebook ,BsTwitter , BsInstagram   } from "react-icons/b
 
 
 
-const Footer = () => {
+const Footer = ({Username}) => {
 
     return(
             <div className="footer">
@@ -15,6 +15,7 @@ const Footer = () => {
                             <li><NavLink className="nav-link-footer">Web design</NavLink></li>
                             <li><NavLink className="nav-link-footer">Development</NavLink></li>
                             <li><NavLink className="nav-link-footer">Hosting</NavLink></li>
+                            
                         </ul>
                     </div>
                     <div className="col1">

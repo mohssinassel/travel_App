@@ -1,166 +1,90 @@
 
-// import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import '../HotelPage/HotelPage.css';
 import { BsFillStarFill} from "react-icons/bs";
 import {AiFillHeart} from 'react-icons/ai';
-import {TiLocation} from 'react-icons/ti'
+import {TiLocation} from 'react-icons/ti';
+import { useState , useEffect } from 'react';
+import axios from 'axios';
 
 const FlightPage = () => {
+    const [favorites, setFavorites] = useState([]);
+
+    const toggleFavorite = (id) => {
+        if (favorites.includes(id)) {
+        setFavorites(favorites.filter((fav) => fav !== id));
+        } else {
+        setFavorites([...favorites, id]);
+        }
+    };
+    const [userData, setUserData] = useState([]);
+
+    const fun = async () => {
+        const response = await axios.get('http://localhost:80/Travel/api/Element/flight.php')
+        console.log(response);
+        if(response.data){
+            setUserData(response.data);}
+            else{
+                console.log(response.error);
+            }
+    }
+    useEffect( () =>{fun()},[])
+    const [searchName , setSearchName] = useState('');
     return(
         <div className="WholePage">
-            <div className="leftSide">
-                <div className="searchPage">
-                    <form className="pageForm">
-                        <label>Location</label>
-                        <input type="text"></input>
-                        <label>Date</label>
-                        <input type="date"></input>
-                        <label>Gestes</label>
-                        <input type="text"></input>
-                        <input type="submit" className='submit'></input>
-                    </form>
-                </div>
-                <div className='filter'>
-                    
-                </div>
+        <div className="leftSide">
+            <div className="searchPage">
+                <form className="pageForm">
+                    <label>Location</label>
+                    <input type="text" onChange={(event) =>{setSearchName(event.target.value);}}></input>
+                    <label>Date</label>
+                    <input type="date"></input>
+                    <label>Gestes</label>
+                    <input type="text"></input>
+                    <input type="submit" className='submit'></input>
+                </form>
             </div>
-            <div className="rightSide">
-                <div>
-                    <h3>16 Hotel Found</h3>
-                </div>
-                <div >
-                    <div className='mainResult'>
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
+            <div className='filter'>
+                
+            </div>
+        </div>
+        <div className="rightSide">
+            
+            <div >
+                <div className='mainResult'>
+                {userData.filter((user)=>{
+                        if(searchName == ""){
+                            return user
+                        }else if (user.city.toLowerCase().includes(searchName.toLowerCase())){
+                            return user
+                        }
+                    }).map(user => (
+                    <div key={user.id}>
+                        <div className="imageTrend" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0)),url(${user.img_url})`}}>
+                        <p onClick={() => toggleFavorite(user.id)}>
+                                <AiFillHeart className={favorites.includes(user.id) ? 'fav' : 'notfav'}/>
+                                </p>
+                            
+                
+                            </div>
+                            
+                        <NavLink to={`/Hotel/${user.id}`} state={{ user }} style={{textDecoration : 'none', color : 'black'}}>
+                        <div className="infoTrend">
+                            {/* <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div> */}
+                            <div className="nameTrend">{user.From_city}</div>
+                            <div><span>Prix : {user.price}$</span> for 1 person</div>
+                            <div className='eventInfo'> 
+                                <div>TAKE OFF = {user.take_off}</div>
+                                <div>LANDING = {user.landing}</div>
                             </div>
                         </div>
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div>
+                        </NavLink>
                     </div>
+                    ))}
                 </div>
             </div>
         </div>
+    </div>
     )
 
 }

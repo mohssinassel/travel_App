@@ -66,8 +66,8 @@ export default function SignIn({ open, onClose, changeHeader }) {
             <FaTimes onClick={onClose} className="exitForm" />
             </div>
             <form className="signInForm" onSubmit={handleSubmit}>
-                <input type="text" name="username" value={userInfo.username}onChange={handleInputChange}/>
-                <input type="password" name="password" value={userInfo.password} onChange={handleInputChange}/>
+                <input type="text" name="username" value={userInfo.username}onChange={handleInputChange} placeholder="username"/>
+                <input type="password" name="password" value={userInfo.password} onChange={handleInputChange} placeholder="password"/>
                 <input type="submit" className="submitSign" defaultValue="submit"/>
             </form>
         </div>

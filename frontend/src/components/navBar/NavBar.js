@@ -13,7 +13,7 @@ import {FaSignInAlt} from 'react-icons/fa';
 
 
 
-const NavBar = () =>{
+const NavBar = ({setUsername}) =>{
     const [isopen , setIsopen] = useState(false);
     const [isSignUpOpen, setIsSignUpOpen] = useState(false);
     const [currentUser,setCurrentUser] = useState(undefined);
@@ -23,6 +23,7 @@ const NavBar = () =>{
             setCurrentUser(
                 JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY))
             );
+            setUsername({currentUser});
             console.log(JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)))
 
             }
@@ -31,6 +32,7 @@ const NavBar = () =>{
     function logOut(){
         localStorage.clear();
         setCurrentUser(undefined);
+        setUsername(undefined);
     }
     function handleFormClose() {
         setIsopen(false);
@@ -39,8 +41,10 @@ const NavBar = () =>{
     }
 
     function change_header(user){
-        setCurrentUser(user.username)
+        setCurrentUser(user.username);
+        setUsername({currentUser});
     }
+    
 
     return(
     <div className="nav">

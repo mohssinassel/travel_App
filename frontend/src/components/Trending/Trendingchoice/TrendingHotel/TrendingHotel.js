@@ -4,155 +4,82 @@ import { BsFillStarFill} from "react-icons/bs";
 import {AiFillHeart} from 'react-icons/ai';
 import {TiLocation} from 'react-icons/ti'
 // import { useState } from "react";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import {NavLink} from "react-router-dom";
 
 
 
 const TrendingHotel = () => {
     // const [islike , useIslike] = useState(false);
+    const [favorites, setFavorites] = useState([]);
+
+    const toggleFavorite = (id) => {
+        if (favorites.includes(id)) {
+        setFavorites(favorites.filter((fav) => fav !== id));
+        } else {
+        setFavorites([...favorites, id]);
+        }
+    };
+    useEffect(() => {
+        const storedFavorites = localStorage.getItem('favorites');
+        if (storedFavorites) {
+            setFavorites(JSON.parse(storedFavorites));
+            }
+        }, []);
+        
+        // Save favorites to local storage whenever it changes
+        useEffect(() => {
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        }, [favorites]);
+    
+    const [userData, setUserData] = useState([]);
+    
+
+    const fun = async () => {
+        const response = await axios.get('http://localhost:80/Travel/api/Element/hotel.php')
+        console.log(response);
+        if(response.data){
+            setUserData(response.data);}
+            else{
+                console.log(response.error);
+            }
+    }
+    useEffect( () =>{fun()},[])
     return(
         <div className="mainTrending">
                     
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
+                    {userData.slice(0,8).map(user => (
+                        <div key={user.id}>
+                            <div className='imageTrend'  style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0)),url(${user.img_url})`}}>
+                                <p onClick={() => toggleFavorite(user.id)}>
+                                    <AiFillHeart className={favorites.includes(user.id) ? 'fav' : 'notfav'}/>
+                                    </p>   
                                 <div className="locationTrend">
                                 <p> <TiLocation/></p>
-                                <p>casablanca</p>
+                                <p>{user.city}</p>
+                                
+                                <p className={user.is_featured == 1 ? "featured" : "featuredNone"}>featured</p>
                                 </div>
                                 </div>
+                                    <NavLink to={`/Hotel/${user.id}`} state={{ user }} style={{textDecoration : 'none', color : 'black'}}>
                             <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
+                                <div className="starTrend">
+                                    {Array.from({ length: user.star_rate }).map((_, i) => (
+                                        <BsFillStarFill key={i} className='star' />
+                                    ))}
                                 </div>
-                                <div>From <span>200$</span>/ Night</div>
+                                <div className="nameTrend">{user.titre}</div>
+                            
+                                <div className="trendRate">
+                                    <div>{user.rate}/5</div>
+                                    <div>({user.review} reviews)</div>
+                                </div>
+                                <div>From <span>{user.price}$</span>/ Night</div>
                             </div>
+                            </NavLink>
                         </div>
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div>
-                    <div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div><div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div><div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div><div>
-                            <div className="imageTrend">
-                                <p><AiFillHeart/></p>
-                                <div className="locationTrend">
-                                <p> <TiLocation/></p>
-                                <p>casablanca</p>
-                                </div>
-                                </div>
-                            <div className="infoTrend">
-                                <div className="starTrend"><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/><BsFillStarFill className="star"/></div>
-                                <div className="nameTrend">Hotel Stanford</div>
-                                <div className="trendRate">
-                                    <div>4.5/5</div>
-                                    <div>(2 reviews)</div>
-                                </div>
-                                <div>From <span>200$</span>/ Night</div>
-                            </div>
-                        </div>
+                        ))}
                     
                 
                 

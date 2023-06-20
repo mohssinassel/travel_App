@@ -13,33 +13,33 @@ const Destination = () =>{
                     <div><p>New York</p>
                     </div>
                     <ul className='second-ul'>
-                        <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
-                        <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
+                        <li><NavLink className='nav-link'>1 Hotels</NavLink></li>
+                        <li><NavLink className='nav-link'>1 Hotels</NavLink></li>
                     </ul>
                 </li> 
                 <li>
                     <div>
-                    <p>California</p>
+                    <p>Casablanca</p>
                     </div>
                     <ul className='second-ul'>
-                        <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
-                        <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
+                        <li><NavLink className='nav-link'>1 Hotels</NavLink></li>
+                        <li><NavLink className='nav-link'>1 Hotels</NavLink></li>
                     </ul>
                     </li>
             </ul>
             <ul className='Destination2'>
                 <li>
-                    <div><p>Los Angless</p></div>
+                    <div><p>Dallas</p></div>
                     <ul className='second-ul'>
                         <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
                         <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
                     </ul>
                     </li>
                 <li>
-                    <div><p>Miami</p></div>
+                    <div><p>Dubai</p></div>
                     <ul className='second-ul'>
-                        <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
-                        <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
+                        <li><NavLink className='nav-link'>3 Hotels</NavLink></li>
+                        <li><NavLink className='nav-link'>1 Hotels</NavLink></li>
                         {/* <li><NavLink className='nav-link'>2 Hotels</NavLink></li>    */}
                     </ul>
                 </li>
@@ -47,13 +47,13 @@ const Destination = () =>{
                     <div><p>Orlando</p></div>
                     <ul className='second-ul'>
                         <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
-                        <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
+                        <li><NavLink className='nav-link'>1 Hotels</NavLink></li>
                     </ul>
                 </li>
                 <li>
-                    <div><p>Dallas</p></div>
+                    <div><p>Los Angles</p></div>
                     <ul className='second-ul'>
-                        <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
+                        <li><NavLink className='nav-link'>1 Hotels</NavLink></li>
                         <li><NavLink className='nav-link'>2 Hotels</NavLink></li>
                     </ul>
                     </li>

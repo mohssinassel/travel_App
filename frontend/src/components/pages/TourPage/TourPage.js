@@ -30,13 +30,14 @@ const TourPage = () => {
             }
     }
     useEffect( () =>{fun()},[])
+    const [searchName , setSearchName] = useState('');
     return(
         <div className="WholePage">
             <div className="leftSide">
                 <div className="searchPage">
                     <form className="pageForm">
                         <label>Location</label>
-                        <input type="text"></input>
+                        <input type="text" onChange={(event) =>{setSearchName(event.target.value);}}></input>
                         <label>Date</label>
                         <input type="date"></input>
                         <label>Gestes</label>
@@ -49,12 +50,16 @@ const TourPage = () => {
                 </div>
             </div>
             <div className="rightSide">
-                <div>
-                    <h3 >Tour Found</h3>
-                </div>
+                
                 <div >
                     <div className='mainResult'>
-                    {userData.map(user => (
+                    {userData.filter((user)=>{
+                        if(searchName == ""){
+                            return user
+                        }else if (user.city.toLowerCase().includes(searchName.toLowerCase())){
+                            return user
+                        }
+                    }).map(user => (
                         <div key={user.id}>
                             <div className="imageTrend" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0)),url(${user.img_url})`}}>
                             <p onClick={() => toggleFavorite(user.id)}>

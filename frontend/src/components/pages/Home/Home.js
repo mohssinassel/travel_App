@@ -50,6 +50,7 @@ function searchChoice(search){
 return (
     <div className='AppHome'>
         <div className='Main'>
+            
             <div className='frontMain'>
                 <div className='mainTitle'>
                 Let's The World Together!
